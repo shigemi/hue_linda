@@ -47,7 +47,7 @@ function init(){
         //mediaStreamSource.connect(audioContext.destination);
 
        //ループ
-        setInterval(Loop, 500);
+        setInterval(Loop, 1000);
         Loop();
     }
     //マイクの有無を調べる
@@ -75,68 +75,12 @@ function init(){
     //周波数の色
       ctx.fillStyle = "#ccc";
 	 
-	 
-	 ////ここから判定＊＊＊＊
-	 
+	 ////ここから判定
 	 
 	 
-      if(data[400] > 10){
-	    ts.write(["hue","0","hsb","65000","200","200"]);   
-		}
-         else if(data[360] > 10){
-	     ts.write(["hue","0","hsb","60000","200","200"]);
-	   }
-         else if(data[350] > 10){
-	      ts.write(["hue","0","hsb","58000","200","200"]);
-	   }
-        else if (data[340] > 10){
-	      ts.write(["hue","0","hsb","55000","200","200"]);
-	   }
-	    else if(data[330] > 10){
-	     ts.write(["hue","0","hsb","53000","200","200"]);
-	   }
-         else if(data[320] > 10){
-	      ts.write(["hue","0","hsb","50000","200","200"]);
-	   }
-         else if (data[310] > 10){
-	      ts.write(["hue","0","hsb","48000","200","200"]);
-	   }
-        else if(data[300] > 10){
-	      ts.write(["hue","0","hsb","45000","200","200"]);
-       }
-	   　else if(data[290] > 10){
-	     ts.write(["hue","0","hsb","42000","200","200"]);
-	   }
-         else if(data[270] > 10){
-	      ts.write(["hue","0","hsb","38000","200","200"]);
-	   }
-        else if (data[250] > 10){
-	      ts.write(["hue","0","hsb","30000","200","200"]);
-	   }
-        else if(data[230] > 10){
-	      ts.write(["hue","0","hsb","28000","200","200"]);
-       }
-	     else if (data[210] > 10){
-	      ts.write(["hue","0","hsb","25000","200","200"]);
-	   }
-        else if(data[190] > 10){
-	      ts.write(["hue","0","hsb","20000","200","200"]);
-       }
-	   　else if(data[170] > 10){
-	     ts.write(["hue","0","hsb","18000","200","200"]);
-	   }
-         else if(data[150] > 10){
-	      ts.write(["hue","0","hsb","13000","200","200"]);
-	   }
-	     else if (data[120] > 10){
-	      ts.write(["hue","0","hsb","8000","200","200"]);
-	   }
-        else if(data[80] > 10){
-	      ts.write(["hue","0","hsb","3000","200","200"]);
-       }
-        else{
-           ts.write(["hue","0","hsb","1000","200","200"]); 
-	   }
+      document.getElementById("test1").innerHTML=("data[50]:" + data[50] +" , data[100]:" + data[100] +" , data[150]:" + +data[150] +" ,  data[180]:" +data[180] +" , data[200]:" + +data[200] +" , data[230]:" +data[230] +" , data[250]:" +data[250] +" , data[280]:" +data[280] +" , data[300]:" +data[300] );
+	  
+	  ts.write(["hue","2","hsb",data[50]*data[100]*5,"200","200"]);
 	 //////ここまで＊＊＊＊
 	 
 
